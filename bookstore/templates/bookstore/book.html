@@ -1,0 +1,16 @@
+{% extends 'bookstore/index.html'%}
+{% block content %}
+    <div>
+        <h1>
+            {{object.title}} ({{object.published_at}})
+        </h1>
+
+        <p>{{object.description}}</p>
+
+        {% if is_auth %}
+            <a href="/{{object.id}}/review">Left review</a>
+        {% endif %}
+
+        <a href="/books">Back</a>
+    </div>
+{% endblock content %}
